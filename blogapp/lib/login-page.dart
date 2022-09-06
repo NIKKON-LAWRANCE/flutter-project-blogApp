@@ -19,7 +19,6 @@ class _LoginPageState extends State<LoginPage> {
 Map<String ,dynamic> ?myMap;
   signinInfo() async {
     var map = Map<String, dynamic>();
-    //myprefarence = await SharedPreferences.getInstance();
 
     map["email"] = email.text.toString();
     map["password"] = password.text.toString();
@@ -27,7 +26,7 @@ Map<String ,dynamic> ?myMap;
     var respons = await http.post(
       Uri.parse("https://apitest.hotelsetting.com/api/login"),
       body: map,
-      // headers: CustomHttpRequest.defaultHeader
+
     );
 
     print("${respons.body}");
